@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Matching Results</h2>
+
+{% if matched_items %}
+    {% for item in matched_items %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.item_type }}</h5>
+                <p class="card-text">{{ item.description }}</p>
+                <p class="card-text">Student: {{ item.student_name }} | Roll No: {{ item.roll_no }} | Branch: {{ item.branch }}</p>
+                <p class="card-text"><small class="text-muted">Posted on: {{ item.date_posted.strftime('%Y-%m-%d') }}</small></p>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No matching items found.</p>
+{% endif %}
+{% endblock %}

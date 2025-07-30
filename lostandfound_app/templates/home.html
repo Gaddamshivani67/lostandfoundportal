@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">All Lost & Found Items</h2>
+<div class="row">
+    {% for item in items %}
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.item_type }}</h5>
+                <p class="card-text"><strong>Description:</strong> {{ item.description }}</p>
+                <p><strong>Student:</strong> {{ item.student_name }} ({{ item.roll_number }}, {{ item.branch }})</p>
+                <p><strong>Status:</strong> {{ item.status }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

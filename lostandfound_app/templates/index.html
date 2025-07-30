@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1 class="display-4 text-primary">Vaagdevi College of Engineering</h1>
+    <p class="lead mt-3">Lost & Found Portal</p>
+    <a href="{{ url_for('login') }}" class="btn btn-primary m-2">Login</a>
+    <a href="{{ url_for('signup') }}" class="btn btn-success m-2">Sign Up</a>
+    <a href="{{ url_for('view_items') }}" class="btn btn-info m-2">View Items</a>
+</div>
+{% endblock %}
