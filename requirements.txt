@@ -1,14 +1,5 @@
-<<<<<<< HEAD
 Flask
 Flask-SQLAlchemy
 Flask-Login
 Werkzeug
 gunicorn
-=======
-Flask
-Flask-Login
-Flask-SQLAlchemy
-Werkzeug
-python-dotenv
-gunicorn
->>>>>>> 43df957c080d9da787eb6e3d605a721397b6c508
