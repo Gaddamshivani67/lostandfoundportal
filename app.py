@@ -97,6 +97,7 @@ def post_item():
 def logout():
     logout_user()
     return redirect(url_for("home"))
+app=app
 
 # ✅ For Vercel: Don't call app.run()
 # Instead, expose app object
