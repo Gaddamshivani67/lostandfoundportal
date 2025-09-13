@@ -89,6 +89,12 @@ def post_item():
         flash("Item posted successfully!", "success")
         return redirect(url_for("dashboard"))
     return render_template("post_item.html")
+@app.route("/view_items")
+@login_required
+def view_items():
+    items = Item.query.all()
+    return render_template("view_items.html", items=items)
+
 
 @app.route("/logout")
 @login_required
