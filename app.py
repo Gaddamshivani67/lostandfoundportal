@@ -3,14 +3,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
-# Initialize Flask app
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 db = SQLAlchemy(app)
 
-# User Loader for Flask-Login
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
@@ -97,8 +95,7 @@ def post_item():
 def logout():
     logout_user()
     return redirect(url_for("home"))
-app=app
 
-# ✅ For Vercel: Don't call app.run()
-# Instead, expose app object
-# app.run(debug=True) --> ❌ REMOVE this line
+# Create database automatically on startup
+with app.app_context():
+    db.create_all()
