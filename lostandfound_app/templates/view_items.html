@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>All Reported Items</h2>
+{% for item in items %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ item.item_type }} - {{ item.description }}</h5>
+            <p class="card-text">Student: {{ item.student_name }} | {{ item.roll_no }} | {{ item.branch }}</p>
+            <p class="card-text"><small class="text-muted">Posted on: {{ item.date_posted.strftime('%Y-%m-%d') }}</small></p>
+        </div>
+    </div>
+{% else %}
+    <p>No lost or found items have been posted yet.</p>
+{% endfor %}
+{% endblock %}
